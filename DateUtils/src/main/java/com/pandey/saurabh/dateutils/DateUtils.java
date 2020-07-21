@@ -48,10 +48,12 @@ public class DateUtils {
 
     public static String getFirstDateOfMonth(String formatYouWant) {
 
-        Calendar ToCal = Calendar.getInstance();
-        Date ToDate = ToCal.getTime();
-        SimpleDateFormat ToFormat = new SimpleDateFormat(formatYouWant, Locale.getDefault());
-        String formattedDate = ToFormat.format(ToDate);
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, cal.getActualMinimum(Calendar.DAY_OF_MONTH));
+        Date firstDate = cal.getTime();
+        SimpleDateFormat format1 = new SimpleDateFormat(formatYouWant,Locale.getDefault());
+        String formattedDate = format1.format(firstDate);
+
         return formattedDate;
     }
 
