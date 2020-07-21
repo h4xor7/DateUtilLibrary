@@ -1,0 +1,3 @@
+include ':DateUtils'
+include ':app'
+rootProject.name = "DateUtilLibrary"
